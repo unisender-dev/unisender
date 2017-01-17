@@ -68,7 +68,7 @@ module UniSender
       params = translate_params(params) if defined?('translate_params')
       params.merge!({'api_key' => api_key, 'format' => 'json'})
       query = make_query(params)
-      url = URI("http://api.unisender.com/#{locale}/api/#{action}")
+      url = URI("https://api.unisender.com/#{locale}/api/#{action}")
       JSON.parse(Net::HTTP.post_form(url, query).body)
     end
 
